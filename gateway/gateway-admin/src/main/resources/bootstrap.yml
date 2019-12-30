@@ -13,3 +13,18 @@ spring:
     sentinel:
       transport:
         dashboard: ${SENTINEL_DASHBOARD_HOST:localhost}:${SENTINEL_DASHBOARD_PORT:8021}
+---
+spring:
+  profiles:
+    active: dev
+  application:
+    name: gateway-admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.0.3.201:8848
+      config:
+        server-addr: 10.0.3.201:8848
+        file-extension: yml
+server:
+  port: 8845
